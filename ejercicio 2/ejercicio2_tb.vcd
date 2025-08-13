@@ -1,0 +1,58 @@
+$date
+	Mon Aug 11 18:44:31 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module ejercicio2_tb $end
+$var wire 4 ! q [3:0] $end
+$var reg 1 " clk $end
+$var reg 1 # serial_in $end
+$scope module uut $end
+$var wire 1 " clk $end
+$var wire 1 # serial_in $end
+$var reg 4 $ q [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx $
+0#
+0"
+bx !
+$end
+#10000
+b0xxx !
+b0xxx $
+1"
+#20000
+0"
+1#
+#30000
+b10xx !
+b10xx $
+1"
+#40000
+0"
+0#
+#50000
+b10x !
+b10x $
+1"
+#60000
+0"
+1#
+#70000
+b1010 !
+b1010 $
+1"
+#80000
+0"
+0#

@@ -1,0 +1,59 @@
+$date
+	Mon Aug 11 19:48:42 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module ejercicio3_tb $end
+$var wire 8 ! y [7:0] $end
+$var reg 8 " data0 [7:0] $end
+$var reg 8 # data1 [7:0] $end
+$var reg 8 $ data2 [7:0] $end
+$var reg 8 % data3 [7:0] $end
+$var reg 2 & sel [1:0] $end
+$scope module uut $end
+$var wire 8 ' data0 [7:0] $end
+$var wire 8 ( data1 [7:0] $end
+$var wire 8 ) data2 [7:0] $end
+$var wire 8 * data3 [7:0] $end
+$var wire 2 + sel [1:0] $end
+$var reg 8 , y [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 ,
+b0 +
+b1000 *
+b100 )
+b10 (
+b1 '
+b0 &
+b1000 %
+b100 $
+b10 #
+b1 "
+b1 !
+$end
+#10000
+b10 !
+b10 ,
+b1 &
+b1 +
+#20000
+b100 !
+b100 ,
+b10 &
+b10 +
+#30000
+b1000 !
+b1000 ,
+b11 &
+b11 +

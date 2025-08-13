@@ -1,0 +1,61 @@
+$date
+	Mon Aug 11 10:58:04 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module ejercicio1_tb $end
+$var wire 1 ! sum $end
+$var wire 1 " co $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % cin $end
+$scope module uut $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % cin $end
+$var wire 1 " co $end
+$var wire 1 ! sum $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+0!
+$end
+#10000
+1!
+1$
+#20000
+0$
+1#
+#30000
+0!
+1"
+1$
+#40000
+0"
+1!
+1%
+0$
+0#
+#50000
+1"
+0!
+1$
+#60000
+0$
+1#
+#70000
+1!
+1$
