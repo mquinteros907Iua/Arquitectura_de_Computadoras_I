@@ -1,0 +1,18 @@
+# Archivos de simulación y compilación
+*.out
+*.vcd
+*.fst
+*.lxt
+*.vvp
+
+# Archivos de waves
+*.gtkw
+
+# Archivos temporales de editores
+*~
+*.swp
+*.tmp
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db

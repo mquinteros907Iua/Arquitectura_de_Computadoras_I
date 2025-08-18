@@ -1,0 +1,11 @@
+# Apuntes y ejercicios de Arquitectura de Computadoras I
+
+Este repositorio contiene los ejercicios que voy resolviendo durante la cursada de la materia **Arquitectura de Computadoras I**.  
+
+El objetivo es documentar el progreso en cada guía, manteniendo código organizado, simulaciones y anotaciones útiles para repaso.
+
+## Contenido
+- Ejercicios en **Verilog** organizados por guía.
+- Archivos de **testbench** para simular cada módulo.
+- Soporte para simulación con **Icarus Verilog** y análisis de ondas con **GTKWave**.
+- Archivos auxiliares (`.gitignore`, etc.) para mantener limpio el repositorio.
