@@ -11,8 +11,8 @@ always @(*)begin
         2'b11: result = a | b; // OR
         default: result = 4'b0000; // Valor por defecto
     endcase
-    
-    // Actualizar el flag de cero
-    zero = (result == 4'b0000); //si result es cero -> zero = 1, si result != 0 -> zero = 0
 end
+    // Actualizar el flag de cero
+    assign zero = (result == 4'b0000); 
+
 endmodule

@@ -20,7 +20,7 @@ module ejercicio8 #(  parameter DATA_WIDTH = 8,
   always @(posedge clk) begin
     if (we)
         mem[addr] <= data_in;      // Escritura
-        data_out <= mem[addr];       // Lectura asincrónica (simulada en salida)
+    data_out <= mem[addr];       // Lectura asincrónica (simulada en salida)
   end
 
 endmodule
