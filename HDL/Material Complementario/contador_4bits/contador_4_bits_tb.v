@@ -1,13 +1,13 @@
 `timescale 1ns/1ps
-`include "ejercicio5.v"
+`include "contador_4bits.v"
 
-module ejercicio5_tb;
+module testbench;
     reg clk;
     reg reset_n;
     wire [6:0] seg;
     wire [3:0] count_value;
 
-    ejercicio5 dut (
+    top_module dut (
         .clk(clk),
         .reset_n(reset_n),
         .seg(seg)
@@ -29,8 +29,8 @@ module ejercicio5_tb;
 
     // Monitor o dump para GTKWave
     initial begin
-        $dumpfile("ejercicio5.vcd");
-        $dumpvars(0, ejercicio5_tb);
+        $dumpfile("contador_4bit.vcd");
+        $dumpvars(0, testbench);
     end
 
 endmodule
