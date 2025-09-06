@@ -11,22 +11,22 @@ Linker script and memory map
 
 LOAD main.o
 
-.text           0x0000000040080000       0x28
+.text           0x0000000040080000       0x1c
  *(.text*)
- .text          0x0000000040080000       0x28 main.o
+ .text          0x0000000040080000       0x1c main.o
 
-.data           0x0000000040080028       0x20
- .data          0x0000000040080028       0x20 main.o
+.data           0x000000004008001c       0x20
+ .data          0x000000004008001c       0x20 main.o
 
-.bss            0x0000000040080048        0x0
+.bss            0x000000004008003c        0x0
  *(.bss*)
- .bss           0x0000000040080048        0x0 main.o
+ .bss           0x000000004008003c        0x0 main.o
                 0x0000000040480000                _stack_end = 0x40480000
 OUTPUT(main.elf elf64-littleaarch64)
 LOAD linker stubs
 
-.debug_line     0x0000000000000000       0x3c
- .debug_line    0x0000000000000000       0x3c main.o
+.debug_line     0x0000000000000000       0x3b
+ .debug_line    0x0000000000000000       0x3b main.o
 
 .debug_info     0x0000000000000000       0x2e
  .debug_info    0x0000000000000000       0x2e main.o
@@ -38,5 +38,5 @@ LOAD linker stubs
  .debug_aranges
                 0x0000000000000000       0x30 main.o
 
-.debug_str      0x0000000000000000       0x68
- .debug_str     0x0000000000000000       0x68 main.o
+.debug_str      0x0000000000000000       0x65
+ .debug_str     0x0000000000000000       0x65 main.o

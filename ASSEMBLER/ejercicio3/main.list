@@ -4,33 +4,29 @@ main.elf:     file format elf64-littleaarch64
 
 Disassembly of section .text:
 
-0000000040080000 <end-0x1c>:
-    40080000:	58000106 	ldr	x6, 40080020 <end+0x4>
-    40080004:	580001e0 	ldr	x0, 40080040 <contenido_X0>
-    40080008:	910020c9 	add	x9, x6, #0x8
-    4008000c:	8b1f00ca 	add	x10, x6, xzr
-    40080010:	f800012a 	stur	x10, [x9]
-    40080014:	f8400129 	ldur	x9, [x9]
-    40080018:	8b0a0120 	add	x0, x9, x10
+0000000040080000 <else-0x18>:
+    40080000:	58000100 	ldr	x0, 40080020 <x>
+    40080004:	58000121 	ldr	x1, 40080028 <y>
+    40080008:	cb1f0009 	sub	x9, x0, xzr
+    4008000c:	b5000069 	cbnz	x9, 40080018 <else>
+    40080010:	91000421 	add	x1, x1, #0x1
+    40080014:	14000002 	b	4008001c <end>
+
+0000000040080018 <else>:
+    40080018:	d1000421 	sub	x1, x1, #0x1
 
 000000004008001c <end>:
     4008001c:	14000000 	b	4008001c <end>
-    40080020:	40080028 	.inst	0x40080028 ; undefined
-    40080024:	00000000 	udf	#0
 
 Disassembly of section .data:
 
-0000000040080028 <Array>:
-    40080028:	00000064 	udf	#100
-    4008002c:	00000000 	udf	#0
-    40080030:	000000c8 	udf	#200
-    40080034:	00000000 	udf	#0
-    40080038:	0000012c 	udf	#300
-    4008003c:	00000000 	udf	#0
+0000000040080020 <x>:
+    40080020:	0000000a 	udf	#10
+    40080024:	00000000 	udf	#0
 
-0000000040080040 <contenido_X0>:
-    40080040:	0000000a 	udf	#10
-    40080044:	00000000 	udf	#0
+0000000040080028 <y>:
+    40080028:	00000005 	udf	#5
+    4008002c:	00000000 	udf	#0
 
 Disassembly of section .debug_line:
 
@@ -46,10 +42,10 @@ Disassembly of section .debug_line:
   20:	00000000 	udf	#0
   24:	00020900 	.inst	0x00020900 ; undefined
   28:	00400800 	.inst	0x00400800 ; undefined
-  2c:	13000000 	sbfx	w0, w0, #0, #1
-  30:	1e1e201e 	.inst	0x1e1e201e ; undefined
-  34:	02201e1e 	.inst	0x02201e1e ; undefined
-  38:	01010003 	.inst	0x01010003 ; undefined
+  2c:	14000000 	b	2c <else-0x4007ffec>
+  30:	1e1e1f1e 	.inst	0x1e1e1f1e ; undefined
+  34:	0222201e 	.inst	0x0222201e ; undefined
+  38:	01010001 	.inst	0x01010001 ; undefined
 
 Disassembly of section .debug_info:
 
@@ -60,17 +56,17 @@ Disassembly of section .debug_info:
    c:	00000000 	udf	#0
   10:	40080000 	.inst	0x40080000 ; undefined
   14:	00000000 	udf	#0
-  18:	40080028 	.inst	0x40080028 ; undefined
+  18:	40080020 	.inst	0x40080020 ; undefined
 	...
   24:	00000007 	udf	#7
-  28:	0000005c 	udf	#92
+  28:	00000059 	udf	#89
   2c:	Address 0x2c is out of bounds.
 
 
 Disassembly of section .debug_abbrev:
 
 0000000000000000 <.debug_abbrev>:
-   0:	10001101 	adr	x1, 220 <end-0x4007fdfc>
+   0:	10001101 	adr	x1, 220 <else-0x4007fdf8>
    4:	12011106 	and	w6, w8, #0x8000000f
    8:	1b0e0301 	madd	w1, w24, w14, w0
    c:	130e250e 	sbfiz	w14, w8, #18, #10
@@ -85,7 +81,7 @@ Disassembly of section .debug_aranges:
    c:	00000000 	udf	#0
   10:	40080000 	.inst	0x40080000 ; undefined
   14:	00000000 	udf	#0
-  18:	00000028 	udf	#40
+  18:	00000020 	udf	#32
 	...
 
 Disassembly of section .debug_str:
@@ -110,10 +106,10 @@ Disassembly of section .debug_str:
   40:	2f495f73 	.inst	0x2f495f73 ; undefined
   44:	45535341 	ssubwb	z1.h, z26.h, z19.b
   48:	454c424d 	saddwb	z13.h, z18.h, z12.b
-  4c:	65742f52 	fmls	z18.h, p3/m, z26.h, z20.h
-  50:	616c706d 	.inst	0x616c706d ; undefined
-  54:	515f6574 	sub	w20, w11, #0x7d9, lsl #12
-  58:	00554d45 	.inst	0x00554d45 ; undefined
-  5c:	20554e47 	.inst	0x20554e47 ; undefined
-  60:	32205341 	orr	w1, w26, #0x1fffff
-  64:	0032342e 	.inst	0x0032342e ; NYI
+  4c:	6a652f52 	bics	w18, w26, w5, lsr #11
+  50:	69637265 	ldpsw	x5, x28, [x19, #-232]
+  54:	336f6963 	.inst	0x336f6963 ; undefined
+  58:	554e4700 	.inst	0x554e4700 ; undefined
+  5c:	20534120 	.inst	0x20534120 ; undefined
+  60:	32342e32 	orr	w18, w17, #0xfff000
+	...
