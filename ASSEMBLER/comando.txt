@@ -1,0 +1,6 @@
+wget -P ~ git.io/.gdbinit
+make
+make runQEMU
+make runGDB
+add-symbol-file main.o 0x0000000040080000
+stepi
