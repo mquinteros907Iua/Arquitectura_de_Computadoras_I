@@ -1,0 +1,28 @@
+section  .data    
+numeros : .word 2 , 5 , 8 , 7 , 4 //Define array de 5 elementos y se almacenan los mismos
+
+.section .text  //seccion del codigo donde se le asignan a los registros 
+.global _start
+
+_start:  //Inicio de programa (similar al main)
+
+    LDR R0 , = numeros  //Carga la direccion del array en R0
+    MOV R1 , #0  //Inicializa el acumulador en 0
+    MOV R2 , #0  //Inicializa el contador en 0
+
+    bucle :   
+        CMP R2 , #5  //Compara el contador con 5
+    BEQ fin  //Si son iguales, salta a fin
+ 
+    LDR R3 , [ R0 , R2 , LSL #2] //Carga el elemento actual del array en R3
+    ANDS R4 , R3 , #1 //Verifica si el numero es impar
+    BNE siguiente //Si es impar, salta a siguiente
+
+    ADD R1 , R1 , R3 //Si es par, lo suma al acumulador
+ 
+    siguiente :
+        ADD R2 , R2 , #1 //Incrementa el contador
+    B bucle
+ 
+fin :
+    STR R1 , [ R0 , #20] //Almacena la suma de los numeros pares en la posicion 5 del array (offset 20 bytes)

@@ -1,0 +1,26 @@
+.section .data  
+valores : .word 4 , 10 , 3 , 8 , 2 , 15  //Define array de 6 elementos y se almacenan los mismos
+ 
+.section .text //seccion del codigo donde se le asignan a los registros
+.global _start
+
+_start :
+    LDR R0 , = valores  //Carga la direccion del array en R0
+    LDR R1 , [ R0 ]   //Carga el primer elemento del array en R1
+    MOV R2 , #1   //Inicializa el contador en 1
+
+    bucle :
+        CMP R2 , #6  //Compara el contador con 6
+    BEQ fin
+
+    LDR R3 , [ R0 , R2 , LSL #2]  //Carga el elemento actual del array en R3
+    CMP R3 , R1  //Compara el elemento actual con el mayor encontrado
+    BLE siguiente
+    MOV R1 , R3  //Si el elemento actual es mayor, lo guarda en R1
+
+    siguiente :
+        ADD R2 , R2 , #1  //Incrementa el contador
+    B bucle
+
+fin :
+    STR R1 , [ R0 , #24]  //Almacena el mayor numero en la posicion 6 del array (offset 24 bytes)
